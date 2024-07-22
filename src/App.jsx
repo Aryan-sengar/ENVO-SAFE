@@ -7,12 +7,13 @@ import Signup from "./pages/Signup"
 import Contactus from "./pages/Contactus"
 import Dashboard from "./pages/Dashboard"
 import Activities from "./pages/Activities"
+import HandleNavbar from "./components/HandleNav/HandleNav"
 function App() {
 
   return (
     <>
     <BrowserRouter>
-    <Navbar/>
+    <HandleNavbar/>
     <Routes>
       
       <Route path="/" element={<Home/>}/>

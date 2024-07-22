@@ -56,6 +56,7 @@ function Dashboard() {
           <div className="mt-6">
             <p className="text-lg text-gray-600"><strong>Email:</strong> {userDetails.email}</p>
             <p className="text-lg text-gray-600"><strong>First Name:</strong> {userDetails.firstName}</p>
+            <p className="text-lg text-gray-600"><strong>Last Name:</strong> {userDetails.lastName}</p>
             {/* <p className="text-lg text-gray-600"><strong>Last Name:</strong> {userDetails.lastName}</p> */}
           </div>
           <div className="mt-6 text-center">

@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState} from "react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/envosafelogo.png"
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -9,10 +10,13 @@ const Navbar = () => {
 
 
 
+
   return (<>
+ 
+
     <nav className="bg-green-600 p-4">
       <div className="container mx-auto flex items-center justify-between">
-        <div className="text-white text-lg font-bold">Envosafe</div>
+        <div className="text-white text-lg font-bold"><Link to={"/"}><img src={logo} alt="logo" height={120} width={120} /></Link></div>
         <div className="hidden md:flex space-x-4">
           <Link to="/" className="text-white hover:text-gray-300">Home</Link>
           <a href="#" className="text-white hover:text-gray-300">About us</a>
@@ -20,7 +24,7 @@ const Navbar = () => {
           <Link to="/contactus" className="text-white hover:text-gray-300">Contact Us</Link>
         </div>
         <div className="hidden md:flex space-x-4">
-          <Link to="/signin" className="text-white hover:text-gray-300 m-2">Sign in</Link>
+          <Link to="/signin" className="text-white hover:text-gray-300 mt-1">Sign in</Link>
           <Link to="/signup">
             <button className="bg-white text-green-600 font-semibold py-1 px-4 rounded hover:bg-gray-100">Sign up</button>
           </Link>
