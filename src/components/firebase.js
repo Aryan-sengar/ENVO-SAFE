@@ -1,18 +1,20 @@
-// firebase.js
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
+// Firebase configuration from environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyCIK7-V6BCNo2EmcAOPxaFHBVL8iaoO_RQ",
-  authDomain: "envo-safe-3fa62.firebaseapp.com",
-  projectId: "envo-safe-3fa62",
-  storageBucket: "envo-safe-3fa62.appspot.com",
-  messagingSenderId: "432166831475",
-  appId: "1:432166831475:web:aff2f5494f3b9604157106"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+export const imageDb = getStorage(app);

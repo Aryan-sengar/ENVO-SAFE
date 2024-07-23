@@ -8,6 +8,7 @@ const HandleNavbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Toggles the state of the menu
+  // eslint-disable-next-line no-unused-vars
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
