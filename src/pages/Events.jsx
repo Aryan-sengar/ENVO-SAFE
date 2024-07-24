@@ -46,7 +46,7 @@ const campaigns = [
     reward: 110,
     verification: 'Upload a photo of you with your bicycle at work.',
     photo: 'https://images.giant-bicycles.com/pwmrwkoourqhjy4hvqoi/preview.jpg',
-  },
+},
 ];
 
 const EventPage = () => {

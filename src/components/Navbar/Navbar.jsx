@@ -12,15 +12,13 @@ const Navbar = () => {
 
 
   return (<>
- 
-
     <nav className="bg-green-600 p-4">
       <div className="container mx-auto flex items-center justify-between">
         <div className="text-white text-lg font-bold"><Link to={"/"}><img src={logo} alt="logo" height={120} width={120} /></Link></div>
         <div className="hidden md:flex space-x-4">
           <Link to="/" className="text-white hover:text-gray-300">Home</Link>
-          <a href="#" className="text-white hover:text-gray-300">About us</a>
-          <a href="#" className="text-white hover:text-gray-300">FAQ</a>
+          <a href="#aboutus" className="text-white hover:text-gray-300">About us</a>
+          <Link to="/blogs"  className="text-white hover:text-gray-300">Blogs</Link>
           <Link to="/contactus" className="text-white hover:text-gray-300">Contact Us</Link>
         </div>
         <div className="hidden md:flex space-x-4">
@@ -42,7 +40,7 @@ const Navbar = () => {
           <div className="flex flex-col space-y-2 mt-2">
             <Link to="/" className="text-white hover:text-gray-300">Home</Link>
             <a href="#" className="text-white hover:text-gray-300">About us</a>
-            <a href="#" className="text-white hover:text-gray-300">FAQ</a>
+            <Link to="/blogs" className="text-white hover:text-gray-300">Blogs</Link>
             <Link to="/contactus" className="text-white hover:text-gray-300">Contact Us</Link>
             <Link to="/signin" className="text-white hover:text-gray-300">Sign in</Link>
             <Link to="/signup">

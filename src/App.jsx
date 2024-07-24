@@ -11,6 +11,7 @@ import Events from "./pages/Events"
 import PlantConservationPage from "./pages/PlantConservationPage"
 import PlantYourTreePage from "./components/PlantYourTreePage/PlantYourTreePage"
 import VoucherReedem from "./pages/VoucherReedem"
+import Blogs from "./pages/Blogs"
 function App() {
 
   return (
@@ -30,6 +31,8 @@ function App() {
       <Route path="/plantconservation" element={<PlantConservationPage/>}></Route>
       <Route path="/yourtree" element={<PlantYourTreePage/>}></Route>
       <Route path="/voucher" element={<VoucherReedem/>}></Route>
+      <Route path="/blogs" element={<Blogs/>}></Route>
+
 
       </Routes>
       

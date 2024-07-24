@@ -1,4 +1,5 @@
 
+
 const VoucherCard = ({ company, description, actionLabel, greenCredits, onClick }) => {
   return (
     <div className="bg-white shadow-md rounded-lg p-4 m-2 w-80">

@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../components/firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 import tokenImage from "../assets/token.png";
 
 function Dashboard() {
   const [greenCredits, setGreenCredits] = useState(0);
-  const addGreenCredits = (credits) => {
-    setGreenCredits(greenCredits + credits);
-  };
   const [userDetails, setUserDetails] = useState(null);
   const navigate = useNavigate();
 
@@ -19,6 +16,7 @@ function Dashboard() {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
           setUserDetails(docSnap.data());
+          setGreenCredits(docSnap.data().credits); // Fetch the credits from Firestore
         } else {
           console.log("User document not found");
         }
@@ -32,16 +30,29 @@ function Dashboard() {
     fetchUserData();
   }, []);
 
-  async function handleLogout() {
+  const addGreenCredits = async (credits) => {
+    const newCreditValue = greenCredits + credits;
+    setGreenCredits(newCreditValue);
+
+    // Update credits in Firestore
+    const user = auth.currentUser;
+    if (user) {
+      const docRef = doc(db, "Users", user.uid);
+      await updateDoc(docRef, { credits: newCreditValue });
+    }
+  };
+
+  const handleLogout = async () => {
     try {
       await auth.signOut();
-      navigate("/login");
+      navigate("/signin");
     } catch (error) {
       console.error("Error logging out:", error.message);
     }
-  }
+  };
 
   return (
+  
     <div className="bg-gray-50 min-h-screen flex flex-col items-center p-6">
       <h1 className="text-4xl font-bold text-gray-800 mb-6">User Dashboard</h1>
       <div className="w-full max-w-3xl">
@@ -86,6 +97,7 @@ function Dashboard() {
         )}
       </div>
     </div>
+ 
   );
 }
 

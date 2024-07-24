@@ -4,30 +4,61 @@ import Modal from '../components/Modal';
 
 const vouchers = [
   {
-    company: { name: 'Flipkart', logo: '/flipkart-logo.png' },
-    description: 'Back to College Sale: Laptops from Rs 9,999 + 3% CashKaro Rewards',
+    company: { name: 'Ecoindian', logo: '/ecoindian-logo.png' },
+    description: '10% Off on All Eco-Friendly Products + Free Shipping',
     actionLabel: 'Activate Deal',
     greenCredits: 50, // Example value
   },
   {
-    company: { name: 'Medlife', logo: '/medlife-logo.png' },
-    description: 'New Users Offer: Upto 25% Off Medicines + 20% Mobikwik SuperCash',
+    company: { name: 'Organic India', logo: '/organicindia-logo.png' },
+    description: '15% Off on First Order of Organic Products',
+    actionLabel: 'Get Code',
+    greenCredits: 40, // Example value
+  },
+  {
+    company: { name: 'Patanjali', logo: '/patanjali-logo.png' },
+    description: 'Up to 20% Off on Natural Health and Wellness Products',
+    actionLabel: 'Activate Deal',
+    greenCredits: 60, // Example value
+  },
+  {
+    company: { name: 'EcoKart', logo: '/ecokart-logo.png' },
+    description: 'Exclusive 25% Off on Sustainable Products',
     actionLabel: 'Get Code',
     greenCredits: 30, // Example value
   },
   {
-    company: { name: 'MI', logo: '/mi-logo.png' },
-    description: '3rd MI Anniversary Sale: Launching Mi Max 2 + 5% SBI Cashback',
+    company: { name: 'Bare Necessities', logo: '/barenecessities-logo.png' },
+    description: '10% Off on Zero-Waste and Sustainable Products',
     actionLabel: 'Activate Deal',
-    greenCredits: 40, // Example value
+    greenCredits: 70, // Example value
   },
   {
-    company: { name: 'Jabong', logo: '/jabong-logo.png' },
-    description: 'Exclusive 100% Cashback: Rs 250 Cashback on orders over Rs 250',
-    actionLabel: 'Activate Deal',
-    greenCredits: 60, // Example value
+    company: { name: 'The Better India Shop', logo: '/betterindia-logo.png' },
+    description: '20% Off on Eco-Friendly Household Items',
+    actionLabel: 'Get Code',
+    greenCredits: 50, // Example value
   },
+  {
+    company: { name: 'Himalaya Wellness', logo: '/himalaya-logo.png' },
+    description: 'Free Shipping on Orders Over ₹500 + 10% Off First Order',
+    actionLabel: 'Activate Deal',
+    greenCredits: 45, // Example value
+  },
+  {
+    company: { name: 'GoodDot', logo: '/gooddot-logo.png' },
+    description: '15% Off on Plant-Based Meat Products for New Customers',
+    actionLabel: 'Get Code',
+    greenCredits: 35, // Example value
+  },
+  {
+    company: { name: 'Organic India', logo: '/organicindia-logo.png' },
+    description: '15% Off on First Order of Organic Products',
+    actionLabel: 'Get Code',
+    greenCredits: 40, // Example value
+  }
 ];
+
 
 const VoucherRedeemPage = () => {
   const [selectedVoucher, setSelectedVoucher] = useState(null);
@@ -51,7 +82,7 @@ const VoucherRedeemPage = () => {
 
   return (
     <div className="container mx-auto px-4">
-      <h1 className="text-3xl font-bold text-center mb-8">Today's Best Cashback Deals</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">Todays Best Cashback Deals</h1>
       <div className="flex flex-wrap justify-center">
         {vouchers.map((voucher, index) => (
           <VoucherCard

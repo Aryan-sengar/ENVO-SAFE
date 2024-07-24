@@ -2,7 +2,7 @@ import aboutusimg from "../../assets/aboutus.jpg";
 
 const AboutUs = () => {
   return (
-    <section className="flex flex-col lg:flex-row items-center bg-white p-8">
+    <section id="aboutus" className="flex flex-col lg:flex-row items-center bg-white p-8">
       <div className="lg:w-1/2 w-full mb-10 mt-10 lg:mb-0">
         <img src={aboutusimg} alt="Environmental conservation" className="rounded-lg shadow-lg scale-75" />
       </div>

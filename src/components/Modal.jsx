@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Modal = ({ isOpen, onClose, voucher, onRedeem }) => {
   if (!isOpen) return null;
 

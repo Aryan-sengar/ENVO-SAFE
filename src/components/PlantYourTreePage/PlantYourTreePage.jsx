@@ -63,8 +63,8 @@ const PlantForm = () => {
   };
 
   return (
-    <div className="p-4 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-4">
-      <h1 className="text-2xl font-bold text-center">Plant Order Form</h1>
+    <div className="mt-20 mb-20 p-30 max-w-md mx-auto bg-white rounded-xl shadow-md space-y-4">
+      <h1 className="mb-10 text-2xl font-bold text-center">Plant Order Form</h1>
       <div>
         <label className="block text-sm font-medium text-gray-700">Select Plant</label>
         <select
