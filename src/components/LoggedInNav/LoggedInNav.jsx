@@ -24,6 +24,7 @@ const LoggedInNavbar = () => {
           <Link to="/activities" className="text-white hover:text-gray-300">Activities</Link>
           <Link to="/events" className="text-white hover:text-gray-300">Events</Link>
           <Link to="/marketplace" className="text-white hover:text-gray-300">Marketplace</Link>
+          <Link to="/voucher" className="text-white hover:text-gray-300">Reedem Voucher</Link>
         </div>
         <div className="hidden md:flex space-x-4 items-center">
           <button

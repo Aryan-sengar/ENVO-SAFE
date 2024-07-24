@@ -8,6 +8,9 @@ import Dashboard from "./pages/Dashboard"
 import Activities from "./pages/Activities"
 import HandleNavbar from "./components/HandleNav/HandleNav"
 import Events from "./pages/Events"
+import PlantConservationPage from "./pages/PlantConservationPage"
+import PlantYourTreePage from "./components/PlantYourTreePage/PlantYourTreePage"
+import VoucherReedem from "./pages/VoucherReedem"
 function App() {
 
   return (
@@ -24,6 +27,10 @@ function App() {
       <Route path="/dashboard" element={<Dashboard/>}></Route>
       <Route path="/activities" element={<Activities/>}></Route>
       <Route path="/events" element={<Events/>}></Route>
+      <Route path="/plantconservation" element={<PlantConservationPage/>}></Route>
+      <Route path="/yourtree" element={<PlantYourTreePage/>}></Route>
+      <Route path="/voucher" element={<VoucherReedem/>}></Route>
+
       </Routes>
       
       <Footer/>
