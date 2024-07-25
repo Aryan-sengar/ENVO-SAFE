@@ -10,21 +10,28 @@ const activities = [
     description: "Promote and protect the conservation of plant species.",
     id: "plant-conservation",
     image: plantConservationImg,
-    tokens: 150, // Example token value
+    tokens: 1, // Example token value
   },
   {
     title: "Water Management",
     description: "Efficiently manage and conserve water resources.",
     id: "water-management",
     image: waterManagementImg,
-    tokens: 100, // Example token value
+    tokens: 1, // Example token value
   },
   {
     title: "Air Pollution Control",
     description: "Initiatives to reduce air pollution and improve air quality.",
     id: "air-pollution",
     image: airPollutionImg,
-    tokens: 120, // Example token value
+    tokens: 1, // Example token value
+  },
+  {
+    title: "Sustainable Agriculture",
+    description: "Initiatives to promote sustainable agriculture",
+    id: "air-pollution",
+    image: airPollutionImg,
+    tokens: 1, // Example token value
   },
   // Add more activities here
 ];
@@ -56,7 +63,7 @@ const Activities = () => {
                   alt="Token"
                   className="w-10 h-10 mr-2"
                 />
-                <span className="text-lg font-bold text-green-600">{activity.tokens} Tokens</span>
+                <span className="text-lg font-bold text-green-600">{activity.tokens} Token</span>
               </div>
               <Link to="/plantconservation">
               <a

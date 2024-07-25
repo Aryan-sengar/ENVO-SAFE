@@ -2,7 +2,7 @@
 
 const VoucherCard = ({ company, description, actionLabel, greenCredits, onClick }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 m-2 w-80">
+    <div className="bg-white shadow-md rounded-lg p-4 m-2 w-80 b-2">
       <div className="flex items-center mb-4">
         <img src={company.logo} alt={`${company.name} logo`} className="w-12 h-12 mr-4" />
         <h2 className="text-xl font-semibold">{company.name}</h2>

@@ -12,6 +12,7 @@ import PlantConservationPage from "./pages/PlantConservationPage"
 import PlantYourTreePage from "./components/PlantYourTreePage/PlantYourTreePage"
 import VoucherReedem from "./pages/VoucherReedem"
 import Blogs from "./pages/Blogs"
+import Transaction from "./pages/Transaction"
 function App() {
 
   return (
@@ -20,7 +21,7 @@ function App() {
     <BrowserRouter>
     <HandleNavbar/>
     <Routes>
-    
+      
       <Route path="/" element={<Home/>}/>
       <Route path="/signin" element={<Signin/>}/>
       <Route path="/signup" element={<Signup/>}/>
@@ -32,6 +33,8 @@ function App() {
       <Route path="/yourtree" element={<PlantYourTreePage/>}></Route>
       <Route path="/voucher" element={<VoucherReedem/>}></Route>
       <Route path="/blogs" element={<Blogs/>}></Route>
+      <Route path="/trans" element={<Transaction/>}></Route>
+
 
 
       </Routes>

@@ -1,9 +1,12 @@
-// src/components/PlantForm.jsx
 
-import  { useState } from 'react';
+import { useState } from 'react';
 import plants from '../../assets/plants';
+import { useWallet } from '../../context/WalletContext'; // Import useWallet
 
 const PlantForm = () => {
+  const { creditWallet, debitWallet } = useWallet(); // Only use debitWallet and creditWallet
+  const [amount, setAmount] = useState(0);
+  const [message, setMessage] = useState('');
   const [selectedPlant, setSelectedPlant] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(0);
@@ -17,6 +20,7 @@ const PlantForm = () => {
     country: '',
   });
   const [orderConfirmed, setOrderConfirmed] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState('money'); // 'money' or 'tokens'
 
   const handlePlantChange = (e) => {
     const plant = plants.find(p => p.name === e.target.value);
@@ -55,11 +59,44 @@ const PlantForm = () => {
     setIsModalOpen(true);
   };
 
-  const handlePayment = () => {
+  const handlePayment = async () => {
     setIsModalOpen(false);
-    setOrderConfirmed(true);
-    // Simulate adding a green credit to the dashboard
-    console.log('Green credit added to dashboard');
+    try {
+      let success = false;
+
+      if (paymentMethod === 'money') {
+        success = debitWallet(price);
+        if (success) {
+          creditWallet(2);
+          // No need to credit tokens here since we're using money
+          setOrderConfirmed(true);
+          setMessage('Order placed successfully with money and you got your green creds!');
+        } else {
+          setOrderConfirmed(false);
+          setMessage('Insufficient funds.');
+        }
+      } else if (paymentMethod === 'tokens') {
+        // Assuming 1 token = $1 for simplicity, adjust as needed
+        const tokenCost = price; // Tokens required for purchase
+        success = debitWallet(tokenCost);
+        if (success) {
+          creditWallet(2); // Add 2 extra tokens
+          setOrderConfirmed(true);
+          setMessage('Order placed successfully with tokens! You got green creds also as our gift to you :).');
+        } else {
+          setOrderConfirmed(false);
+          setMessage('Insufficient tokens.');
+        }
+      }
+
+      if (success) {
+        console.log('Order confirmed with total price:', price);
+      }
+    } catch (error) {
+      setOrderConfirmed(false);
+      setMessage('Error processing payment.');
+      console.error('Payment error:', error);
+    }
   };
 
   return (
@@ -109,7 +146,20 @@ const PlantForm = () => {
       </button>
       {price > 0 && (
         <div className="mt-4">
-          <h2 className="text-xl font-bold">Total Price: ${price}</h2>
+          <h2 className="text-xl font-bold">Total Price: GC - {price}</h2>
+        </div>
+      )}
+      {price > 0 && (
+        <div className="mt-4">
+          <label className="block text-sm font-medium text-gray-700">Payment Method</label>
+          <select
+            value={paymentMethod}
+            onChange={(e) => setPaymentMethod(e.target.value)}
+            className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+          >
+            <option value="money">Pay with Money</option>
+            <option value="tokens">Pay with Tokens</option>
+          </select>
         </div>
       )}
       {price > 0 && (
@@ -184,6 +234,7 @@ const PlantForm = () => {
                 className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
               />
             </div>
+
             <button
               onClick={handlePayment}
               className="bg-blue-500 text-white p-2 rounded-md w-full"
@@ -191,11 +242,19 @@ const PlantForm = () => {
               Pay Now
             </button>
           </div>
+       
+
+
         </div>
       )}
       {orderConfirmed && (
         <div className="mt-4 text-green-600 font-bold">
-          Order placed successfully! Green credit added to dashboard.
+          Order placed successfully!
+        </div>
+      )}
+      {message && (
+        <div className="mt-4 text-red-600 font-bold">
+          {message}
         </div>
       )}
     </div>
