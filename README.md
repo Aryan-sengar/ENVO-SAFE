@@ -5,7 +5,7 @@ EnvoSafe is a web platform that incentivizes environmental preservation and sust
 ## Table of Contents
 - [Features](#features)
 - [Getting Started](#getting-started)
-- [Installation](#installation)
+- [Run Envosafe](#runenvosafe)
 - [Contributing](#contributing)
 
 
@@ -26,7 +26,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 - npm or Yarn
 - Firebase Account (for database and storage)
 
-### Run Envosafe
+## Run Envosafe
 
 1. **Clone the repository:**
 
@@ -40,23 +40,23 @@ Follow these instructions to get a copy of the project up and running on your lo
     yarn dev
 
 
-Frontend:
+-- Frontend:
+- Vite
+- React
+- Tailwind CSS
+- Firebase for Authentication
 
-Vite
-React
-Tailwind CSS
-Firebase for Authentication
-Backend & Storage:
-Firebase (Firestore for database, Firebase Storage for file storage)
+-- Backend & Storage:
+- Firebase (Firestore for database, Firebase Storage for file storage)
 
 ## Contributing
 We welcome contributions! Please follow these steps:
 
 Fork the project.
-Create your feature branch: git checkout -b feature/AmazingFeature.
-Commit your changes: git commit -m 'Add some AmazingFeature'.
-Push to the branch: git push origin feature/AmazingFeature.
-Open a pull request.
+- Create your feature branch: git checkout -b feature/AmazingFeature.
+- Commit your changes: git commit -m 'Add some AmazingFeature'.
+- Push to the branch: git push origin feature/AmazingFeature.
+- Open a pull request.
 
 Thank you for being part of the EnvoSafe community! 🌱
 
